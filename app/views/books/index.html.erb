@@ -21,7 +21,8 @@
               <th>name</th>
               <th><%= current_user.name %></th>
             </tr>
-            <tr>                <th>introduction</th>
+            <tr>
+              <th>introduction</th>
               <th><%= current_user.introduction %></th>
             </tr>
           </tbody>
@@ -60,19 +61,22 @@
             </tr>
           </thead>
           <tbody>
-           <% @books.each do |book| %>
+            <% @books.each do |book| %>
             <tr>
               <td>
                 <%= link_to user_path(book.user) do %>
-                <%= image_tag book.user.get_profile_image("40x40") %>                  <% end %>
+                  <%= image_tag book.user.get_profile_image("40x40") %>
+                <% end %>
               </td>
                <td>
                 <%= link_to book_path(book) do %>
-                <%= book.title %>
+                  <%= book.title %>
                 <% end %>
               </td>
-              <td><%= book.body %></td>
-              </tr>
+              <td>
+                <%= book.body %>
+              </td>
+            </tr>
             <% end %>
           </tbody>
         </table>
