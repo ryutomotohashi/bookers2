@@ -62,7 +62,7 @@
               <li>
                 <%= link_to new_user_registration_path, class: "nav-link text-light" do %>
                   <i class="fas fa-user-plus"></i>
-                  Sign Up
+                  Sign up
                 <% end %>
               </li>
               <li>
@@ -77,9 +77,18 @@
         </div>
       </div>
     </header>
-    <% flash.each do |message_type, message| %>
-      <%= content_tag :div, message, class: "message_type text-success" %>
-    <% end %>
+    <main>
+      <p class="notice text-success"><%= notice %></p>
     <%= yield %>
+    </main>
+    <footer>
+      <div class="container mt-5">
+        <div class="row">
+          <div class="mx-auto">
+            <p>CopyRight Infratop.inc</p>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
